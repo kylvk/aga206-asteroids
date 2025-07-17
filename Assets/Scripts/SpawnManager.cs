@@ -9,16 +9,17 @@ public class SpawnManager : MonoBehaviour
     public float PushForce = 100f; // the force to push ast
     public float SpawnThreshold = 10; // the limit of the ast we can spawn
     private float checkTimer = 0f;
+    public float Inaccuracy = 2f;
 
     void Start()
     {
-        Debug.Log(TotalAsteroidValue()); 
+        Debug.Log(TotalAsteroidValue());
     }
 
-   private void Update()
+    private void Update()
     {
         checkTimer += Time.deltaTime;
-        if(checkTimer > CheckInterval)
+        if (checkTimer > CheckInterval)
         {
             checkTimer = 0f;
 
@@ -59,7 +60,7 @@ public class SpawnManager : MonoBehaviour
 
     public int TotalAsteroidValue()
     {
-        Asteroid[] asteroids = FindAnyObjectByType<Asteroid>(FindObjectsSortMode.None);
+        Asteroid[] asteroids = FindObjectsByType<Asteroid>(FindObjectsSortMode.None);
         int value = 0;
         for (int i = 0; i < asteroids.Length; i++)
         {
@@ -70,7 +71,7 @@ public class SpawnManager : MonoBehaviour
 
     }
 
-private void PushDirection(Vector2 from)
+    private Vector2 PushDirection(Vector2 from)
     {
         Vector2 miss = Random.insideUnitCircle * Inaccuracy;
         Vector2 destination = (Vector2)transform.position + miss;
@@ -78,3 +79,4 @@ private void PushDirection(Vector2 from)
 
         return direction;
     }
+}

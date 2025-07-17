@@ -16,22 +16,26 @@ public class SoundPlayer : MonoBehaviour
             return;
 
         audioSource.clip = audioClip[0];
+
         if (randomPitch)
         {
-            audioSource.pitch = Random.Range(-0.8f, 1.2f)
+            audioSource.pitch = Random.Range(0.9f, 1.1f);
         }
-        else 
+        else
         {
-            audioSource.Play();
+            audioSource.pitch = 1f;
         }
-            
+
+        audioSource.Play();
     }
+
     public void PlayRandomSound()
     {
-        if (audioClip) == null || audioClip.Length == 0)
-                return;
+        if (audioClip == null || audioClip.Length == 0)
+            return;
 
         audioSource.clip = audioClip[Random.Range(0, audioClip.Length)];
-
+        audioSource.pitch = Random.Range(0.9f, 1.1f);
+        audioSource.Play();
     }
 }
