@@ -1,16 +1,21 @@
 using UnityEngine;
+using UnityEngine.UI;
+using TMPro;
 
 public class HealthUI : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    public TMP_Text HealthTextBox;
+    private Spaceship ship;
     void Start()
     {
-        
+        ship = FindFirstObjectByType<Spaceship>();
     }
-
-    // Update is called once per frame
     void Update()
     {
-        
+        if (ship != null)
+        {
+            HealthTextBox.text = "Health: " + ship.HealthCurrent.ToString();
+        }
     }
 }
+

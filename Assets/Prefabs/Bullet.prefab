@@ -185,4 +185,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Damage: 1
-  ExplosionPrefab: {fileID: 0}
+  ExplosionPrefab: {fileID: 1978731309846134031, guid: 2076025adf186be4a9371fbd61e49f01, type: 3}
