@@ -20,13 +20,23 @@ public class Spaceship : MonoBehaviour
 
     [Header("UI")]
     public ScreenFlash Flash;
+    public ScreenShake Shake;
+    public GameOverUI GameOverUI;
+
+    [Header("Score")]
+    public int Score;
+    public int HighScore;
+
+   
+
 
     private Rigidbody2D rb2D;
 
-    void Start()
+    private void Start()
     {
         rb2D = GetComponent<Rigidbody2D>();
         HealthCurrent = HealthMax;
+        HighScore = GetHighScore();
     }
 
     void Update()
@@ -78,7 +88,10 @@ public class Spaceship : MonoBehaviour
 
     public void Explode()
     {
-        Debug.Log("Game Over");
+        //DieSounds.PlaySound(false);
+
+        //Debug.Log("Game Over");
+        GameOver();
         Destroy(gameObject);
     }
 
@@ -89,4 +102,24 @@ public class Spaceship : MonoBehaviour
         Vector2 force = transform.up * BulletSpeed;
         rb.AddForce(force);
     }
+    public int GetHighScore()
+    {
+        return PlayerPrefs.GetInt("HighScore", 0);
+    }
+    public void SetHighScore(int score)
+    {
+        PlayerPrefs.SetInt("HighScore", Score);
+    }
+
+    public void GameOver()
+    {
+        bool celebrateHighScore = false;
+        if(Score > GetHighScore() && celebrateHighScore == false)
+        {
+            SetHighScore(Score);
+            celebrateHighScore = true;
+        }
+        GameOverUI.Show(celebrateHighScore, Score, GetHighScore());
+    }
+
 }

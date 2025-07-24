@@ -1,12 +1,11 @@
 using System.Runtime.CompilerServices;
-using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 
 public class SpawnManager : MonoBehaviour
 {
-    public GameObject[] AsteroidRefs; // ast to spawn
+    public GameObject[] AsteroidRefs; // john to spawn
     public float CheckInterval = 3f; // interv of time to check if can spawn
-    public float PushForce = 100f; // the force to push ast
+    public float PushForce = 100f; // the force to push john
     public float SpawnThreshold = 10; // the limit of the ast we can spawn
     private float checkTimer = 0f;
     public float Inaccuracy = 2f;
@@ -36,6 +35,7 @@ public class SpawnManager : MonoBehaviour
 
         // find random spawn point
         Vector3 spawnPoint = RandomOffscreenPoint();
+        spawnPoint.z = transform.position.z;
 
         //spawn the john
         GameObject asteroid = Instantiate(asteroidRef, spawnPoint, transform.rotation);
