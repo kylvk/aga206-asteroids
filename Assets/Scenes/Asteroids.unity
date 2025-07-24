@@ -351,7 +351,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ScoreTextBox: {fileID: 38125414}
   HighScoreTextBox: {fileID: 774461179}
-  Celebrate: {fileID: 0}
+  Celebrate: {fileID: 1733124}
   GameOverPanel: {fileID: 6925453}
 --- !u!1 &38125412
 GameObject:
@@ -489,6 +489,23 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 38125412}
   m_CullTransparentMesh: 1
+--- !u!1 &275585054 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1708463043316208356, guid: fdcd7bd2eab914a42a04a6118052780b, type: 3}
+  m_PrefabInstance: {fileID: 6646097970092735683}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &275585061
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 275585054}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b9a0eb36654e9d740b23162384be9462, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &343150905
 GameObject:
   m_ObjectHideFlags: 0
@@ -1727,7 +1744,8 @@ MonoBehaviour:
   SpawnValue: 3
   CollisionDamage: 1
   HealthMax: 3
-  Chunks: []
+  Chunks:
+  - {fileID: 0}
   ChunksMin: 0
   ChunksMax: 4
   ExplodeDist: 0.5
@@ -2326,6 +2344,10 @@ PrefabInstance:
       propertyPath: Flash
       value: 
       objectReference: {fileID: 1164731580}
+    - target: {fileID: 685265568836962113, guid: fdcd7bd2eab914a42a04a6118052780b, type: 3}
+      propertyPath: GameOverUI
+      value: 
+      objectReference: {fileID: 6925457}
     - target: {fileID: 1708463043316208356, guid: fdcd7bd2eab914a42a04a6118052780b, type: 3}
       propertyPath: m_Name
       value: spaceship
@@ -2333,7 +2355,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 1708463043316208356, guid: fdcd7bd2eab914a42a04a6118052780b, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 275585061}
   m_SourcePrefab: {fileID: 100100000, guid: fdcd7bd2eab914a42a04a6118052780b, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:

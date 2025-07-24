@@ -41,11 +41,11 @@ public class Spaceship : MonoBehaviour
 
     void Update()
     {
-        float horizontal = Input.GetAxis("Horizontal");
-        float vertical = Input.GetAxis("Vertical");
+       float horizontal = Input.GetAxis("Horizontal");
+       float vertical = Input.GetAxis("Vertical");
 
         ApplyThrust(vertical);
-        ApplyTorque(horizontal);
+       //  ApplyTorque(horizontal); - movement is now with mouse
         UpdateFiring();
 
         if(Input.GetKeyDown(KeyCode.P))
@@ -73,11 +73,11 @@ public class Spaceship : MonoBehaviour
         rb2D.AddForce(thrust);
     }
 
-    private void ApplyTorque(float amount)
-    {
-        float torque = amount * TurnPower * Time.deltaTime;
-        rb2D.AddTorque(-torque);
-    }
+   //private void ApplyTorque(float amount)
+    //{
+        //float torque = amount * TurnPower * Time.deltaTime;
+       // rb2D.AddTorque(-torque);
+    //}
 
     public void TakeDamage(int damage)
     {
@@ -88,6 +88,7 @@ public class Spaceship : MonoBehaviour
 
         if (HealthCurrent <= 0)
         {
+            Debug.Log("Dead");
             Explode();
         }
     }
@@ -97,7 +98,7 @@ public class Spaceship : MonoBehaviour
         //DieSounds.PlaySound(false);
 
         //Debug.Log("Game Over");
-        GameOver();
+        //GameOver();
         Destroy(gameObject);
     }
 
