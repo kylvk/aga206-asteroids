@@ -52,10 +52,14 @@ MonoBehaviour:
   HealthMax: 3
   HealthCurrent: 0
   BulletPreFab: {fileID: 3353842472921979273, guid: f0722e431e8d8b047a0dc6140eb771ca, type: 3}
-  BulletSpeed: 100
+  BulletSpeed: 400
   FiringRate: 0.33
   HitsSounds: {fileID: 0}
   Flash: {fileID: 0}
+  Shake: {fileID: 0}
+  GameOverUI: {fileID: 0}
+  Score: 0
+  HighScore: 0
 --- !u!212 &7402633470828072700
 SpriteRenderer:
   m_ObjectHideFlags: 0

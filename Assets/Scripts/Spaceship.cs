@@ -47,6 +47,12 @@ public class Spaceship : MonoBehaviour
         ApplyThrust(vertical);
         ApplyTorque(horizontal);
         UpdateFiring();
+
+        if(Input.GetKeyDown(KeyCode.P))
+        {
+            //PlayerPrefs.DeleteAll();
+            //PlayerPrefs.DeleteKey("HighScore")
+        }
     }
 
     private void UpdateFiring()
@@ -76,7 +82,7 @@ public class Spaceship : MonoBehaviour
     public void TakeDamage(int damage)
     {
         HealthCurrent -= damage;
-        HitsSounds.PlayRandomSound();
+        //HitsSounds.PlayRandomSound();
 
         StartCoroutine(Flash.FlashRoutine());
 

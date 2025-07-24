@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 504512770170546483}
   - component: {fileID: 1404313044031598053}
   - component: {fileID: 7668089067389000302}
+  - component: {fileID: -5967665890644236751}
   m_Layer: 0
   m_Name: asteroid_large04
   m_TagString: Untagged
@@ -178,3 +179,24 @@ PolygonCollider2D:
       - {x: 0.0234444, y: 0.1591228}
       - {x: -0.020536214, y: 0.18837452}
   m_UseDelaunayMesh: 0
+--- !u!114 &-5967665890644236751
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5489816401635579604}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 747569415b728754cabf9dd7b9cecde0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SpawnValue: 3
+  CollisionDamage: 1
+  HealthMax: 3
+  Chunks: []
+  ChunksMin: 0
+  ChunksMax: 4
+  ExplodeDist: 0.5
+  ExplosionForce: 10
+  ScoreValue: 10

@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 6644268368736676349}
   - component: {fileID: 5994227397612164582}
   - component: {fileID: 8675919314214791575}
+  - component: {fileID: -7662974321365759430}
   m_Layer: 0
   m_Name: Asteroid_Small01
   m_TagString: Untagged
@@ -171,3 +172,24 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &-7662974321365759430
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5863822444451013169}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 747569415b728754cabf9dd7b9cecde0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SpawnValue: 3
+  CollisionDamage: 1
+  HealthMax: 3
+  Chunks: []
+  ChunksMin: 0
+  ChunksMax: 4
+  ExplodeDist: 0.5
+  ExplosionForce: 10
+  ScoreValue: 10
