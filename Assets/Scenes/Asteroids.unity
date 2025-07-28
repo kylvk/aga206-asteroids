@@ -412,8 +412,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 'Score:'
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 03aefbca19e3c6645ba1ff1a3abcb996, type: 2}
-  m_sharedMaterial: {fileID: 5743739484128392823, guid: 03aefbca19e3c6645ba1ff1a3abcb996, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -504,6 +504,31 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b9a0eb36654e9d740b23162384be9462, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &275585068
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 275585054}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3289a42fc7b4e19418ae8349fd6da70c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  flashDuration: 0.33
+--- !u!114 &275585069
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 275585054}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7d386606626483243bc8df23fede8c16, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &343150905
@@ -759,8 +784,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 'HighScore:'
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 03aefbca19e3c6645ba1ff1a3abcb996, type: 2}
-  m_sharedMaterial: {fileID: 5743739484128392823, guid: 03aefbca19e3c6645ba1ff1a3abcb996, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -2345,6 +2370,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1164731580}
     - target: {fileID: 685265568836962113, guid: fdcd7bd2eab914a42a04a6118052780b, type: 3}
+      propertyPath: TurnPower
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 685265568836962113, guid: fdcd7bd2eab914a42a04a6118052780b, type: 3}
       propertyPath: GameOverUI
       value: 
       objectReference: {fileID: 6925457}
@@ -2352,13 +2381,20 @@ PrefabInstance:
       propertyPath: m_Name
       value: spaceship
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: -2864564973487771372, guid: fdcd7bd2eab914a42a04a6118052780b, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 1708463043316208356, guid: fdcd7bd2eab914a42a04a6118052780b, type: 3}
       insertIndex: -1
       addedObject: {fileID: 275585061}
+    - targetCorrespondingSourceObject: {fileID: 1708463043316208356, guid: fdcd7bd2eab914a42a04a6118052780b, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 275585069}
+    - targetCorrespondingSourceObject: {fileID: 1708463043316208356, guid: fdcd7bd2eab914a42a04a6118052780b, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 275585068}
   m_SourcePrefab: {fileID: 100100000, guid: fdcd7bd2eab914a42a04a6118052780b, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:

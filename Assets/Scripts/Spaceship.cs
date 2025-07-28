@@ -2,6 +2,8 @@ using UnityEngine;
 
 public class Spaceship : MonoBehaviour
 {
+
+
     public float EnginePower = 10f;
     public float TurnPower = 10f;
 
@@ -20,7 +22,7 @@ public class Spaceship : MonoBehaviour
 
     [Header("UI")]
     public ScreenFlash Flash;
-    public ScreenShake Shake;
+    //public ScreenShake Shake;
     public GameOverUI GameOverUI;
 
     [Header("Score")]
@@ -45,7 +47,7 @@ public class Spaceship : MonoBehaviour
        float vertical = Input.GetAxis("Vertical");
 
         ApplyThrust(vertical);
-       //  ApplyTorque(horizontal); - movement is now with mouse
+        ApplyTorque(horizontal);
         UpdateFiring();
 
         if(Input.GetKeyDown(KeyCode.P))
@@ -73,11 +75,11 @@ public class Spaceship : MonoBehaviour
         rb2D.AddForce(thrust);
     }
 
-   //private void ApplyTorque(float amount)
-    //{
-        //float torque = amount * TurnPower * Time.deltaTime;
-       // rb2D.AddTorque(-torque);
-    //}
+   private void ApplyTorque(float amount)
+    {
+       float torque = amount * TurnPower * Time.deltaTime;
+       rb2D.AddTorque(-torque);
+    }
 
     public void TakeDamage(int damage)
     {
@@ -129,4 +131,33 @@ public class Spaceship : MonoBehaviour
         GameOverUI.Show(celebrateHighScore, Score, GetHighScore());
     }
 
+}
+
+// old movement for v2
+public class Player : MonoBehaviour
+{
+    public float EnginePower = 10f;
+    public float TurnPower = 10f;
+    private Rigidbody2D rb2D;
+    private void Start()
+    {
+        rb2D = GetComponent<Rigidbody2D>();
+    }
+    private void Update()
+    {
+        float horiz = Input.GetAxis("Horizontal");
+        float vert = Input.GetAxis("Vertical");
+        ApplyThrust(vert);
+        ApplyTorque(horiz);
+    }
+    private void ApplyThrust(float amount)
+    {
+        Vector2 thrust = transform.up * EnginePower * Time.deltaTime * amount;
+        rb2D.AddForce(thrust);
+    }
+    private void ApplyTorque(float amount)
+    {
+        float torque = amount * TurnPower * Time.deltaTime;
+        rb2D.AddTorque(-torque);
+    }
 }
